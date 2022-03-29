@@ -13,7 +13,6 @@ const Inicio = () => {
 
   return (
     <Layout>
-      {/*
       <div className="container my-5 rounded bg-light shadow-lg">
         <div className="d-flex justify-content-between align-items-center flex-wrap">
           <div className="dropdown">
@@ -39,8 +38,6 @@ const Inicio = () => {
           ))}
         </div>
       </div>
-      */}
-      
     </Layout>
   );
 };
