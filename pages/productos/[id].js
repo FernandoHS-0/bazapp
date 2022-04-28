@@ -7,6 +7,7 @@ import { useState, useContext, useEffect } from "react";
 import Message from "../../components/Message";
 import { onSnapshot, doc, getDoc, updateDoc } from "firebase/firestore";
 import DetalleCategorias from "../../components/DetalleCategorias";
+import getEstatus from "../../utilities/obtenerEstatus";
 
 //Declaramos una variable para la etiqueta img de la card
 const ImgDetalleProducto = styled.img`
@@ -66,6 +67,7 @@ const Producto = () => {
     propetario,
     talla,
     urlImagen,
+    estado
   } = producto;
 
   const agregarComentario = async (e) => {
@@ -118,6 +120,7 @@ const Producto = () => {
                 <div className="card">
                   <div className="card-body">
                     <h2 className="card-title mt-2 mb-5"> {nombre}</h2>
+                    <h5 className="card-text h5">Estado: {getEstatus(parseInt(estado))}</h5>
                     <h5 className="card-text h5">Talla: </h5>
                     <p className="card-text">{talla}</p>
                     <h5 className="card-text h5">Descripcion: </h5>
