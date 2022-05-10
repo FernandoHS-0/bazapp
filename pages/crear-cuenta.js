@@ -1,4 +1,4 @@
-import Layout from "../components/layouts/Layout";
+//import Layout from "../components/layouts/Layout";
 import { useContext, useState } from "react";
 // Validacion
 import validarCrearCuenta from "../validacion/crearCuenta";
@@ -10,6 +10,8 @@ import useValidacion from "../hooks/useValidacion";
 import Error from "../components/Error";
 //Router para colocar la navegacion del usuario
 import Router from "next/router";
+
+import Link from "next/link";
 
 const Registro = () => {
   //State inicial
@@ -55,7 +57,7 @@ const Registro = () => {
   }
 
   return (
-    <Layout>
+
       <div className="container my-5 rounded bg-light shadow-lg">
         <form onSubmit={handleSubmit} className="row g-3 mt-5 container-form">
           <p className="text-center my-5 fs-3">
@@ -172,8 +174,13 @@ const Registro = () => {
             </button>
           </div>
         </form>
+        <div className="mb-5">
+          <Link href="/">
+            <a className="nav-link active text-center"><span className="fw-bold text-bazapp-fuerte">¿Ya estas registrado? Inicia sesión</span></a>
+          </Link>
+        </div>
       </div>
-    </Layout>
+
   );
 };
 

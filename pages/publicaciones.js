@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Productos from "../components/Productos";
 
 //Importamos una libreria que nos permite filtrar los tipos de propiedades
-import { collection, doc, getDocs, orderBy, query, where } from "@firebase/firestore";
+import { collection, getDocs, query, where } from "@firebase/firestore";
 
 const Publicaciones = () => {
   //State
@@ -47,7 +47,9 @@ const Publicaciones = () => {
       <div className="container my-5 rounded bg-light shadow-lg">
         <div className="row g-3 mt-5">
           <p className="d-block fs-4 text-muted ms-3 my-3">
-            Productos en venta
+          {publicaciones.length === 0
+              ? "Aun no tienes publicaciones :( , comienza a publicar!!!"
+              : "Productos en venta"}
           </p>
         </div>
         <div className="row hidden-md-up mt-5">

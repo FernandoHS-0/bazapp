@@ -21,5 +21,9 @@ export default function validarPublicacion(values) {
     errores.foto = "La foto es obligatoria";
   }
 
+  if (!values.telefono) {
+    errores.telefono = "El teléfono es obligatorio";
+  }
+
   return errores;
 }

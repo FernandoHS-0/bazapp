@@ -28,10 +28,10 @@ const Producto = () => {
     query: { id },
   } = router;
 
-  const executeScroll = () => {
+  /*const executeScroll = () => {
     const elem = document.getElementById("data");
     elem.scrollTop = elem.scrollHeight;
-  };
+  };*/
 
   useEffect(() => {
     if (id && consultarDB) {
@@ -42,7 +42,6 @@ const Producto = () => {
         if (docSnap.exists()) {
           const unsub = onSnapshot(doc(fire.db, "productos", id), (doc) => {
             guardarProducto(doc.data());
-            executeScroll();
             guardarConsultarDB(false);
           });
         } else {
@@ -52,10 +51,10 @@ const Producto = () => {
       };
       obtenerProducto();
     }
-    //eslint-disable-next-line
+
   }, [id]);
 
-  if (Object.keys(producto).length === 0 && !error) return "Cargando...";
+  if (Object.keys(producto).length === 0) return "Cargando...";
   //extraer los datos del producto
   const {
     categorias,
@@ -67,7 +66,8 @@ const Producto = () => {
     propetario,
     talla,
     urlImagen,
-    estado
+    estado,
+    telefono
   } = producto;
 
   const agregarComentario = async (e) => {
@@ -104,7 +104,7 @@ const Producto = () => {
             Detalles del producto
           </p>
           <div className="mt-3 row">
-            <div className="col mb-3">
+            <div className="col-md-12 col-lg-6">
               <div className="card ml-4">
                 <ImgDetalleProducto
                   src={urlImagen}
@@ -115,7 +115,7 @@ const Producto = () => {
             </div>
 
             {/*Segundo DIV principal QUE CONTIENE LOS DATOS DEL PRODUCTO   */}
-            <div className="col mb-3">
+            <div className="col-md-12 col-lg-6 mb-3">
               <div>
                 <div className="card">
                   <div className="card-body">
@@ -138,6 +138,12 @@ const Producto = () => {
                     <div className="mt-2 card-text ">
                       Este producto es ofertado por:
                       <p className="text-bazapp">{propetario.nombre}</p>
+                      Teléfono de contacto:
+                      <a className="btn btnWhatsapp"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={`https://wa.me/${telefono}?text=Hola%20me%20interesa%20esta%20prenda%20https://bazapp.netlify.app${router.asPath}`}>
+                        <img src="/mensaje.png" alt="icono-whatsapp" />  {telefono}</a>
                     </div>
                   </div>
                 </div>

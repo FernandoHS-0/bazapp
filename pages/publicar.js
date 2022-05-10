@@ -24,6 +24,7 @@ const AgregarProducto = () => {
     talla: "",
     descripcion: "",
     foto: "",
+    telefono: "",
   };
 
   //State de la pagina
@@ -41,7 +42,7 @@ const AgregarProducto = () => {
     useValidacion(INITIAL_STATE, validarPublicacion, crearPublicacion);
 
   //datos para crear publicación
-  const { nombre, precio, talla, descripcion } = valores;
+  const { nombre, precio, talla, descripcion, telefono } = valores;
   console;
 
   function crearPublicacion() {
@@ -58,6 +59,7 @@ const AgregarProducto = () => {
         talla,
         descripcion,
         categorias,
+        telefono,
         comentarios: [],
         urlImagen: fileurl,
         creado: Date.now(),
@@ -201,6 +203,22 @@ const AgregarProducto = () => {
                   {errores.descripcion && (
                     <Error message={errores.descripcion} />
                   )}
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="telefono-contacto" className="form-label">
+                    Teléfono de contacto
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="telefono"
+                    name="telefono"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="000 000 0000"
+                    value={telefono}
+                  />
+                  {errores.telefono && <Error message={errores.telefono} />}
                 </div>
               </div>
               <p>Categorias</p>

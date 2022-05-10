@@ -1,6 +1,6 @@
+
 import styled from "@emotion/styled";
-import Link from "next/Link";
-import { useEffect } from "react";
+import Link from "next/link";
 const Logo = styled.img`
   width: 62px;
   height: 45px;
