@@ -121,8 +121,6 @@ const Producto = () => {
                   <div className="card-body">
                     <h2 className="card-title mt-2 mb-5"> {nombre}</h2>
                     <h5 className="card-text h5">Estado: {getEstatus(parseInt(estado))}</h5>
-                    <h5 className="card-text h5">Talla: </h5>
-                    <p className="card-text">{talla}</p>
                     <h5 className="card-text h5">Descripcion: </h5>
                     <p className="card-text">{descripcion}</p>
                     <h5 className="card-text h5">Precio: </h5>

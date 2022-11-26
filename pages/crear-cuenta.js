@@ -143,7 +143,7 @@ const Registro = () => {
 
           <div className="col-md-6">
             <label htmlFor="password" className="form-label">
-              Constraseña
+              Contraseña
             </label>
             <input
               type="password"
@@ -157,7 +157,7 @@ const Registro = () => {
 
           <div className="col-md-6">
             <label htmlFor="conpassword" className="form-label">
-              Confirma Constraseña
+              Confirma contraseña
             </label>
             <input
               name="conpassword"

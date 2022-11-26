@@ -172,22 +172,6 @@ const AgregarProducto = () => {
                   />
                   {errores.precio && <Error message={errores.precio} />}
                 </div>
-                <div className="col-md-6">
-                  <label htmlFor="talla" className="form-label">
-                    Talla
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="talla"
-                    name="talla"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="CH, M, G, XXL, 24, 27"
-                    value={talla}
-                  />
-                  {errores.talla && <Error message={errores.talla} />}
-                </div>
                 <div className="mb-3">
                   <label htmlFor="descripcion" className="form-label">
                     Descripción

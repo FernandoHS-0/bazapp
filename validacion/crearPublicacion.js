@@ -13,10 +13,6 @@ export default function validarPublicacion(values) {
     errores.descripcion = "La Descripcion es obligatoria";
   }
 
-  if (!values.talla) {
-    errores.talla = "La talla es obligatoria";
-  }
-
   if (!values.foto) {
     errores.foto = "La foto es obligatoria";
   }

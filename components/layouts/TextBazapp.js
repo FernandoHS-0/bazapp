@@ -14,7 +14,7 @@ const TextBazapp = () => {
         <span className="letters-container">
           <span className="letters letters-left">B</span>
           <span className="letters bang">
-            <LogoText src="/ganchos.png" alt="ganchos" />
+            <LogoText src="/ganchos_2.png" alt="ganchos" />
           </span>
         </span>
         <span className="circle circle-white"></span>
