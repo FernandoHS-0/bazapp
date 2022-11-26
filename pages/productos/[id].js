@@ -140,7 +140,7 @@ const Producto = () => {
                       <a className="btn btnWhatsapp"
                       target="_blank"
                       rel="noreferrer"
-                      href={`https://wa.me/${telefono}?text=Hola%20me%20interesa%20esta%20prenda%20https://bazapp.netlify.app${router.asPath}`}>
+                      href={`https://wa.me/${telefono}?text=Hola%20me%20interesa%20este%20producto%20https://bazapp.netlify.app${router.asPath}`}>
                         <img src="/mensaje.png" alt="icono-whatsapp" />  {telefono}</a>
                     </div>
                   </div>
